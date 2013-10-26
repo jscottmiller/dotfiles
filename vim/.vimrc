@@ -1,5 +1,25 @@
 set nocompatible
 
+" Vundle settings
+
+filetype off 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles
+Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nanotech/jellybeans.vim'
+
+
+filetype plugin indent on
+
 " Enables backspace to delete the previous character
 set bs=2 
 
@@ -20,7 +40,6 @@ set expandtab
 set shiftwidth=4
 filetype indent on
 
-set t_Co=256
 
 " Syntax highlighting on
 syn on
@@ -32,11 +51,10 @@ autocmd FileType make set noexpandtab
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 
-" Use the lucius schole
+" Colorscheme
 set background=dark
-colorscheme lucius
+set t_Co=256
+colorscheme jellybeans
 
 " Bind crtl-m to default make target
 noremap <C-m> :wa<CR>:make tests<CR>
-
-
