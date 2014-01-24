@@ -16,6 +16,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'scrooloose/nerdtree'
 
 
 filetype plugin indent on
@@ -40,6 +41,9 @@ set expandtab
 set shiftwidth=4
 filetype indent on
 
+" nerdtree settings
+autocmd vimenter * if !argc() | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
 
 " Syntax highlighting on
 syn on
