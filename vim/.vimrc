@@ -1,24 +1,24 @@
 set nocompatible
+filetype off 
 
 " Vundle settings
 
-filetype off 
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My bundles
-Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
 
-
+call vundle#end()
 filetype plugin indent on
 
 " Enables backspace to delete the previous character
@@ -44,6 +44,9 @@ filetype indent on
 " nerdtree settings
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+
+" ag settings
+map <C-o> :Ag 
 
 " Syntax highlighting on
 syn on
