@@ -42,6 +42,7 @@ set shiftwidth=4
 filetype indent on
 
 " nerdtree settings
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
@@ -64,4 +65,4 @@ set t_Co=256
 colorscheme jellybeans
 
 " Bind crtl-m to default make target
-noremap <C-m> :wa<CR>:make tests<CR>
+" noremap <C-m> :wa<CR>:make tests<CR>
