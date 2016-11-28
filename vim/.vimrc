@@ -17,6 +17,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
+Plugin 'duganchen/vim-soy'
 
 call vundle#end()
 filetype plugin indent on
