@@ -46,6 +46,7 @@ filetype indent on
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize = 45
 
 " ag settings
 map <C-o> :Ag 
