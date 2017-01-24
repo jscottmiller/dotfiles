@@ -18,6 +18,8 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'duganchen/vim-soy'
+Plugin 'tomlion/vim-solidity'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin indent on
