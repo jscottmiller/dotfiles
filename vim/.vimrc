@@ -22,6 +22,12 @@ Plugin 'duganchen/vim-soy'
 call vundle#end()
 filetype plugin indent on
 
+" English spell checking
+set spell spelllang=en_us
+
+" Ignore case when searching
+:set ignorecase
+
 " Enables backspace to delete the previous character
 set bs=2 
 
@@ -41,6 +47,9 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 filetype indent on
+
+" python settings
+autocmd FileType python setl nosmartindent
 
 " nerdtree settings
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
