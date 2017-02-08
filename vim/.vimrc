@@ -16,7 +16,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'duganchen/vim-soy'
 Plugin 'tomlion/vim-solidity'
 Plugin 'posva/vim-vue'
@@ -59,8 +59,13 @@ autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize = 45
 
-" ag settings
-map <C-o> :Ag 
+" ack settings
+"" Don't open first result by default
+map <C-o> :Ack!<Space>
+"" Use the silver searcher
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 " Syntax highlighting on
 syn on
