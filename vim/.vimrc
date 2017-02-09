@@ -20,6 +20,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'duganchen/vim-soy'
 Plugin 'tomlion/vim-solidity'
 Plugin 'posva/vim-vue'
+Plugin 'w0rp/ale'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
