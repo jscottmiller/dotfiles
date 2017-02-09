@@ -59,6 +59,7 @@ autocmd FileType python setl nosmartindent
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+map <C-i> :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 45
 
 " ack settings
