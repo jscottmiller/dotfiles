@@ -62,6 +62,7 @@ autocmd FileType make set noexpandtab
 " shorter tabs for html and js
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
+autocmd FileType vue set tabstop=2 shiftwidth=2
 
 " Colorscheme
 set background=dark
