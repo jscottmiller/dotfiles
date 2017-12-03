@@ -96,6 +96,7 @@ autocmd FileType make set noexpandtab
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType vue set tabstop=2 shiftwidth=2
+autocmd FileType scss set tabstop=2 shiftwidth=2
 
 " Colorscheme
 set background=dark
