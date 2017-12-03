@@ -52,6 +52,10 @@ set expandtab
 set shiftwidth=4
 filetype indent on
 
+" Display tabs as arrows
+set list
+set listchars=eol:¬,tab:▸\ 
+
 " python settings
 autocmd FileType python setl nosmartindent
 
