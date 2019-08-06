@@ -13,15 +13,12 @@ Plugin 'VundleVim/Vundle.vim'
 " My bundles
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
-Plugin 'duganchen/vim-soy'
-Plugin 'tomlion/vim-solidity'
-Plugin 'posva/vim-vue'
 Plugin 'w0rp/ale'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -63,7 +60,7 @@ autocmd FileType python setl nosmartindent
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
-map <C-i> :NERDTreeFind<CR>
+map <C-m> :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 45
 
 " ctrlp settings
@@ -80,7 +77,7 @@ endif
 
 " ack settings
 "" Don't open first result by default
-map <C-o> :Ack!<Space>
+nmap <C-h> :Ack!<Space>
 "" Use the silver searcher
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -89,14 +86,18 @@ endif
 " Syntax highlighting on
 syn on
 
-" noexpandtab for makefiles
+" noexpandtab for make, go
 autocmd FileType make set noexpandtab
+autocmd FileType go set noexpandtab
 
-" shorter tabs for html and js
+" Tabstops
 autocmd FileType html set tabstop=2 shiftwidth=2
+autocmd FileType yaml set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType vue set tabstop=2 shiftwidth=2
 autocmd FileType scss set tabstop=2 shiftwidth=2
+autocmd FileType py set tabstop=4 shiftwidth=4
+autocmd FileType go set tabstop=4 shiftwidth=4
 
 " Colorscheme
 set background=dark
