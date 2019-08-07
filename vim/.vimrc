@@ -23,6 +23,13 @@ Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
+" Use space as leader
+let mapleader = " "
+
+" Autocompletion of commands
+set wildmenu
+set wildmode=longest,list,full
+
 " English spell checking
 set spell spelllang=en_us
 
@@ -59,11 +66,12 @@ autocmd FileType python setl nosmartindent
 " nerdtree settings
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>i :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 45
 
 " ctrlp settings
+let g:ctrlp_map = '<leader>p'
 if executable('ag')
   " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
   set grepprg=ag\ --nogroup\ --nocolor
@@ -77,7 +85,7 @@ endif
 
 " ack settings
 "" Don't open first result by default
-nmap <C-h> :Ack!<Space>
+nmap <leader>o :Ack!<Space>
 "" Use the silver searcher
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -103,6 +111,3 @@ autocmd FileType go set tabstop=4 shiftwidth=4
 set background=dark
 set t_Co=256
 colorscheme jellybeans
-
-" Bind crtl-m to default make target
-" noremap <C-m> :wa<CR>:make tests<CR>
