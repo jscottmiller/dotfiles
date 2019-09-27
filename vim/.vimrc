@@ -114,3 +114,12 @@ autocmd FileType go set tabstop=4 shiftwidth=4
 set background=dark
 set t_Co=256
 colorscheme jellybeans
+
+" Youcompleteme
+let g:ycm_semantic_triggers =  {
+    \   'c' : ['->', '.'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'cs,java,javascript,typescript,python,go' : ['.'],
+    \   'html': ['<', '"', '</', ' '],
+    \   'vim' : ['re![_a-za-z]+[_\w]*\.']
+    \ }
