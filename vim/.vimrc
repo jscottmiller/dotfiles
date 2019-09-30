@@ -21,6 +21,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'prettier/vim-prettier'
 
 call vundle#end()
 filetype plugin indent on
@@ -123,3 +124,8 @@ let g:ycm_semantic_triggers =  {
     \   'html': ['<', '"', '</', ' '],
     \   'vim' : ['re![_a-za-z]+[_\w]*\.']
     \ }
+
+" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
