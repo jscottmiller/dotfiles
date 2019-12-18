@@ -16,6 +16,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'prettier/vim-prettier'
@@ -93,6 +94,9 @@ nmap <leader>o :Ack!<Space>
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" Vim fugitive settings
+nmap <leader>b :Gblame
 
 " Syntax highlighting on
 syn on
