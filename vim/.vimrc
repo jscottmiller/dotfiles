@@ -18,10 +18,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
 Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'prettier/vim-prettier'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'prettier/vim-prettier'
 
 call vundle#end()
 filetype plugin indent on
@@ -105,7 +105,7 @@ autocmd FileType go set noexpandtab
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
-autocmd FileType typescript set tabstop=2 shiftwidth=2
+autocmd FileType typescript set tabstop=4 shiftwidth=4
 autocmd FileType vue set tabstop=2 shiftwidth=2
 autocmd FileType scss set tabstop=2 shiftwidth=2
 autocmd FileType py set tabstop=4 shiftwidth=4
@@ -116,11 +116,14 @@ set background=dark
 set t_Co=256
 colorscheme jellybeans
 
+" Automatic omnicompletion
+" inoremap . .<C-x><C-o>
+
 " Youcompleteme
 let g:ycm_semantic_triggers =  {
     \   'c' : ['->', '.'],
     \   'cpp,objcpp' : ['->', '.', '::'],
-    \   'cs,java,javascript,typescript,python,go' : ['.'],
+    \   'cs,java,javascript,python,go' : ['.'],
     \   'html': ['<', '"', '</', ' '],
     \   'vim' : ['re![_a-za-z]+[_\w]*\.']
     \ }
@@ -128,4 +131,3 @@ let g:ycm_semantic_triggers =  {
 " Prettier
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
