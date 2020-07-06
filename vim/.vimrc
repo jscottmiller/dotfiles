@@ -101,6 +101,9 @@ nmap <leader>b :Gblame
 " Syntax highlighting on
 syn on
 
+" Workaround for typescript in vim
+autocmd BufNewFile,BufRead *.tsx   set filetype=typescript
+
 " noexpandtab for make, go
 autocmd FileType make set noexpandtab
 autocmd FileType go set noexpandtab
@@ -109,7 +112,7 @@ autocmd FileType go set noexpandtab
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
-autocmd FileType typescript set tabstop=4 shiftwidth=4
+autocmd FileType typescript set tabstop=2 shiftwidth=2
 autocmd FileType vue set tabstop=2 shiftwidth=2
 autocmd FileType scss set tabstop=2 shiftwidth=2
 autocmd FileType py set tabstop=4 shiftwidth=4
@@ -120,8 +123,14 @@ set background=dark
 set t_Co=256
 colorscheme jellybeans
 
-" Automatic omnicompletion
+" omnicompletion
 " inoremap . .<C-x><C-o>
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Youcompleteme
 let g:ycm_semantic_triggers =  {
