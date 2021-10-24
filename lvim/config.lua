@@ -55,6 +55,7 @@ lvim.builtin.project.active=false
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -114,14 +115,23 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 
+lvim.lang.python.linters = { { exe = "flake8" } }
+
 -- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {
+    {"folke/tokyonight.nvim"},
+    {
+      "folke/trouble.nvim",
+      cmd = "TroubleToggle",
+    },
+    {
+      "windwp/nvim-spectre",
+      event = "BufRead",
+      config = function()
+        require("spectre").setup()
+      end,
+    },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
