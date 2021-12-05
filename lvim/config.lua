@@ -50,6 +50,10 @@ lvim.builtin.project.active=false
 --   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 -- }
 
+lvim.builtin.which_key.mappings['S'] = {
+  ":lua require('spectre').open()<CR>", "Spectre"
+}
+
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
@@ -115,6 +119,27 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "json",
+      "markdown",
+    },
+  },
+  {
+    exe = "goimports",
+    filetypes = {
+      "go"
+    }
+  }
+}
+
 lvim.lang.python.linters = { { exe = "flake8" } }
 
 -- Additional Plugins
@@ -134,6 +159,6 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
+lvim.autocommands.custom_groups = {
+  --{ "BufWinEnter", "*.go", "setlocal sw=4 noexpandtab" },
+}
