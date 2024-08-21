@@ -128,6 +128,7 @@ formatters.setup {
       "typescript",
       "json",
       "markdown",
+      "vue"
     },
   },
   {
