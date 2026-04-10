@@ -24,3 +24,8 @@ fi
 mkdir -p "$HOME/.config"
 rm -rf "$HOME/.config/nvim"
 ln -sf "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+
+# Coder-specific setup
+if [ -n "${CODER:-}" ]; then
+  "$DOTFILES_DIR/install-coder.sh"
+fi
